@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { articles } from "../lib/articleList";
+import { articles } from "@/lib/articleList";
 
 import styles from "./page.module.css";
 
@@ -20,8 +20,8 @@ export default function Home() {
         <h2>記事一覧</h2>
         <ul>
           {articles.map((a) => (
-            <li key={a.slug}>
-              <Link href={`/article/${a.slug}`}>{a.title}</Link>
+            <li key={a?.slug}>
+              <Link href={`/article/${a?.slug}`}>{a?.title}</Link>
             </li>
           ))}
         </ul>

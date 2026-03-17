@@ -25,7 +25,7 @@ export default function Header({ isArticle }: { isArticle: boolean }) {
           )}
         </div>
       </div>
-      <Progress />
+      <Progress isArticle={isArticle} />
     </header>
   );
 }

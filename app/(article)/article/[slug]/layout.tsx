@@ -1,9 +1,9 @@
-import "./globals.css";
+import "@/app/globals.css";
 
-import styles from "./layout.module.css";
+import styles from "@/app/(main)/layout.module.css";
 
-import Header from "../template/Header";
-import Footer from "../template/Footer";
+import Header from "@/template/Header";
+import Footer from "@/template/Footer";
 
 export default function RootLayout({
   children,
@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body className={styles.root}>
-        <Header isArticle={false} />
+        <Header isArticle={true} />
         <main className={styles.main}>{children}</main>
         <Footer />
       </body>
