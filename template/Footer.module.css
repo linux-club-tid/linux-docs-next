@@ -1,0 +1,23 @@
+.footer {
+  width: 75vw;
+}
+
+.footer_text {
+  text-align: center;
+}
+
+.footer_ul {
+  align-content: center;
+}
+
+.footer_content_wrap {
+  display: flex;
+}
+
+.footer_content {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

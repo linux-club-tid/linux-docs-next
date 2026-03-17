@@ -1,0 +1,34 @@
+.header {
+  width: 75vw;
+  height: fit-content;
+  position: sticky;
+  top: 0;
+  color: var(--t-color);
+  background-color: var(--b-color);
+  z-index: 10000;
+}
+
+.header_content_wrap {
+  display: flex;
+}
+
+.title {
+  text-align: center;
+}
+
+.nav {
+  margin-left: 2.5vw;
+}
+
+.nav_wrap {
+  display: flex;
+}
+
+.link {
+  color: var(--blue);
+}
+
+.a {
+  cursor: pointer;
+  color: var(--blue);
+}

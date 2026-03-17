@@ -1,0 +1,19 @@
+.header_hr {
+  width: 100%;
+  position: relative;
+}
+
+.bg_hr {
+  border: none;
+  border-top: 4px solid var(--t-color);
+  margin: 0;
+}
+
+.progress_hr {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  border-top: 4px solid var(--green);
+  margin: 0;
+}
