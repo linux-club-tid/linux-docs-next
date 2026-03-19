@@ -121,7 +121,7 @@ Linuxで一般ユーザーにより作成されたテキストファイルなど
 - まったく権限を与えないなら → 0
 - つまりこの例では 640 と表記します
 
-![permission calculation](../images/permissions/cal.jpg)
+![permission calculation](./images/cal.jpg)
 
 ### なぜ 4,2,1 なのか?
 
