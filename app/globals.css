@@ -6,6 +6,7 @@
 
   --t-color: light-dark(#000000, #ffffff);
   --t-color-r: light-dark(#ffffff, #000000);
+  --t-color-sub: light-dark(#444444, #aaaaaa);
   --b-color: light-dark(#f0f0e0, #202020);
   --b-color-r: light-dark(#202020, #f0f0e0);
   --blue: light-dark(#4040ff, #c0c0ff);

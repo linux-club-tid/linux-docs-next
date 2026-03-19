@@ -35,9 +35,19 @@
   border-radius: 8px;
 }
 
+.img_cap {
+  font-size: 2.8vh;
+  color: var(--t-color-sub);
+}
+
 .a {
   cursor: pointer;
   color: var(--blue);
+  scroll-margin-top: 40vh;
+}
+
+.fn_li {
+  scroll-margin-top: 40vh;
 }
 
 .hr {

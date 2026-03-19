@@ -127,9 +127,8 @@ export default async function Page({
               href?.startsWith("#user-content-fn-") ||
               href?.startsWith("#user-content-fnref-")
             ) {
-              const tag_id = href.slice(1);
               return (
-                <a href={tag_id} className={styles.a} id={id}>
+                <a href={href} className={styles.a} id={id}>
                   {children}
                 </a>
               );
@@ -145,6 +144,22 @@ export default async function Page({
               >
                 {children}
               </a>
+            );
+          },
+          li: ({ id, children, ...props }) => {
+            if (id?.startsWith("user-content-fn-")) {
+              return (
+                <>
+                  <li id={id} className={styles.fn_li}>
+                    {children}
+                  </li>
+                </>
+              );
+            }
+            return (
+              <li id={id} {...props}>
+                {children}
+              </li>
             );
           },
 
@@ -188,7 +203,12 @@ export default async function Page({
             return (
               <>
                 <img className={styles.img} src={src} alt={alt} />
-                {alt && <figcaption>{alt}</figcaption>}
+                {alt && (
+                  <>
+                    <br />
+                    <div className={styles.img_cap}>{alt}</div>
+                  </>
+                )}
               </>
             );
           },
