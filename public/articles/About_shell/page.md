@@ -34,7 +34,7 @@ PATH="$PATH:$HOME/my-apps/bin"
 
 例えば`git`においてログをきれいに出力するオプションがあるのですがそれがとても長いのです。`git --no-pager log --all --date-order --date=format:"%Y-%m-%d" --graph --format=" <%h> %ad [%an] %C(green)%d%Creset %s" -n 15`これを実行すると以下のようにgit logをグラフィカルに表示できます。
 
-![alias-long-git-opts](../images/shells/alias-long-git-opts.png)
+![alias-long-git-opts](../Shell/images/alias-long-git-opts.png)
 
 しかしこんなコマンドを何度も手打ちするのは非現実的なのでShellに対して`gls`と言ったら`git --no-pager log --all --date-order --date=format:"%Y-%m-%d" --graph --format=" <%h> %ad [%an] %C(green)%d%Creset %s" -n 15`を実行して、と命令を先に設定で書いておきます。そうすることでユーザーは長いコマンドや定型的なコマンドをに別名(=Alias)を付けて実行が出来ます。
 
@@ -93,15 +93,15 @@ Shellは機能性やデザインのカスタマイズという点でも比較さ
 
 以下は各Shellのデフォルトデザインです。上からbash, zsh, fishです。若干fishの方がデフォルトで色がついていてデザイン的?
 
-![bash-zsh-fish-default-ui](../images/shells/bash-zsh-fish.png)
+![bash-zsh-fish-default-ui](../Shell/images/bash-zsh-fish.png)
 
 そして設定ファイルなどでカスタマイズすると以下のようなデザインにも出来ます。
 
-![customized-fish-design](../images/shells/customed-fish.png )
+![customized-fish-design](../Shell/images/customed-fish.png)
 
 これらはPromptと言われ、shellがコマンドをつけつけていることをユーザーへ知らせる表示です。ここにどのアカウントでログインしているか、現在のディレクトリのgitの情報(変更数やブランチ名)を表示することでShellをより便利に出来ます。また前回のコマンドの結果(成功/失敗)も表示されることが多く、私は`:)`/`:(`として色も青と赤で分けています。
 
-![return 1 in my fish](../images/shells/return-1-fish-desing.png)
+![return 1 in my fish](../Shell/images/return-1-fish-desing.png)
 
 このようなデザインのカスタマイズは基本的にどのようなShellでも出来るのですが、簡単さがことなります。たとえば先ほどの私のfishは外部依存はない(はず)で、fishの設定で完結します。それが出来るのはfishがgit statusなどをデフォルトで提供しているためです。bashなどでは設定だけでなく外部のツールを入れたりする必要があることがあります。
 
@@ -144,3 +144,4 @@ Shellは機能性やデザインのカスタマイズという点でも比較さ
 ```
 
 その後一度ログアウトすることで変更が反映され、ログイン時に`fish`が使われるようになります。
+
