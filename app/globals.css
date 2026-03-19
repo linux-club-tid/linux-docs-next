@@ -20,19 +20,54 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-p {
-  font-size: 20px;
-}
-
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: var(--font-main);
+}
+
+footer {
+  font-family: var(--font-footer);
+}
+
+pre,
+code {
+  font-family: var(--font-code);
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: var(--font-main-bold);
+  font-size: 5vh;
+}
+
+h2 {
+  font-family: var(--font-main-bold);
+  font-size: 4.2vh;
+}
+
+h3 {
+  font-size: 4vh;
+}
+
+h4 {
+  font-size: 3.8vh;
+}
+
+h5 {
+  font-size: 3.6vh;
+}
+
+h6 {
+  font-size: 3.4vh;
+}
+
+p,
+a,
+ul,
+pre,
+code {
+  font-size: 3vh;
 }

@@ -43,13 +43,6 @@ export default async function Page({
     content = await fs.readFile(filePath, "utf-8");
   } catch {
     return notFound();
-    /*return (
-      <p>
-        slug:{slug}
-        <br />
-        filePath:{filePath}
-      </p>
-    );*/
   }
 
   const tree = unified().use(remarkParse).parse(content);
@@ -92,7 +85,9 @@ export default async function Page({
     <div className={styles.root}>
       <h1>{articles.find((a) => a?.slug === slug)?.title}</h1>
       <hr className={styles.hr} />
-      <h2 id="index-list">目次</h2>
+      <h2 id="index-list" className={styles.sub_title_text}>
+        目次
+      </h2>
       <ol start={0}>
         {subtitles.map((v, i) => {
           if (v.tag === "h2") {
@@ -156,7 +151,6 @@ export default async function Page({
           h2: ({ children }) => {
             return (
               <>
-                <div className={styles.sub_title_virt_line} />
                 <h2
                   className={styles.sub_title_text}
                   id={`h2_subtitle-${h2Count++}`}
@@ -218,6 +212,9 @@ export default async function Page({
                     style={oneDark}
                     language={language}
                     PreTag="div"
+                    codeTagProps={{
+                      style: { fontFamily: "var(--font-code)" },
+                    }}
                   >
                     {String(children).replace(/\n$/, "")}
                   </SyntaxHighlighter>
