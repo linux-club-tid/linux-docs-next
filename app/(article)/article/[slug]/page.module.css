@@ -66,6 +66,7 @@
 .sub_title_text {
   padding-left: 30px;
   margin-top: 5vh;
+  scroll-margin-top: 40vh;
 }
 
 .sub_title_hr {
@@ -75,6 +76,7 @@
 .lower_sub_title {
   margin-bottom: 0;
   margin-top: 1vh;
+  scroll-margin-top: 40vh;
 }
 
 .lower_sub_title_hr {

@@ -6,6 +6,9 @@ import remarkGfm from "remark-gfm";
 
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import { visit } from "unist-util-visit";
 
 import { notFound } from "next/navigation";
 
@@ -49,28 +52,27 @@ export default async function Page({
     );*/
   }
 
-  let subtitles: SubTitle[] = [
+  const tree = unified().use(remarkParse).parse(content);
+
+  const subtitles: SubTitle[] = [
     { tag: "h2", value: { id: "index-list", text: "目次" } },
   ];
 
   let h2Count = 0;
   let h3Count = 0;
-  let indexListNum = 0;
 
-  const getText = (children: React.ReactNode): string => {
-    if (typeof children === "string") return children;
-    if (Array.isArray(children))
-      return children.map((c) => getText(c)).join("");
-    return "";
-  };
+  visit(tree, "heading", (node: any) => {
+    const text = node.children
+      .filter((c: any) => c.type === "text")
+      .map((c: any) => c.value)
+      .join("");
 
-  const appendSubtitle = (tag: "h2" | "h3", text: string): string => {
-    if (tag === "h2") {
+    if (node.depth === 2) {
       const id = `h2_subtitle-${h2Count++}`;
       subtitles.push({ tag: "h2", value: { id, text } });
+    }
 
-      return id;
-    } else {
+    if (node.depth === 3) {
       const id = `h3_subtitle-${h3Count++}`;
       const last = subtitles[subtitles.length - 1];
 
@@ -79,10 +81,12 @@ export default async function Page({
       } else {
         subtitles.push({ tag: "h3", values: [{ id, text }] });
       }
-
-      return id;
     }
-  };
+  });
+
+  h2Count = 0;
+  h3Count = 0;
+  let indexListNum = 0;
 
   return (
     <div className={styles.root}>
@@ -94,19 +98,19 @@ export default async function Page({
           if (v.tag === "h2") {
             return (
               <li key={i} value={indexListNum++}>
-                <a className={styles.a} href={v.value.id}>
+                <a className={styles.a} href={`#${v.value.id}`}>
                   {v.value.text}
                 </a>
               </li>
             );
           } else {
             return (
-              <li className={styles.no_number}>
+              <li key={i} className={styles.no_number}>
                 <ul>
                   {v.values.map((iv, ii) => {
                     return (
                       <li key={ii}>
-                        <a className={styles.a} href={iv.id}>
+                        <a className={styles.a} href={`#${iv.id}`}>
                           {iv.text}
                         </a>
                       </li>
@@ -152,16 +156,14 @@ export default async function Page({
           h2: ({ children }) => {
             return (
               <>
-                <div className={styles.sub_title}>
-                  <div className={styles.sub_title_virt_line} />
-                  <h2
-                    className={styles.sub_title_text}
-                    id={appendSubtitle("h2", getText(children))}
-                  >
-                    {children}
-                  </h2>
-                  <hr className={styles.sub_title_hr} />
-                </div>
+                <div className={styles.sub_title_virt_line} />
+                <h2
+                  className={styles.sub_title_text}
+                  id={`h2_subtitle-${h2Count++}`}
+                >
+                  {children}
+                </h2>
+                <hr className={styles.sub_title_hr} />
               </>
             );
           },
@@ -171,7 +173,7 @@ export default async function Page({
               <>
                 <h3
                   className={styles.lower_sub_title}
-                  id={appendSubtitle("h3", getText(children))}
+                  id={`h3_subtitle-${h3Count++}`}
                 >
                   {children}
                 </h3>
