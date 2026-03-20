@@ -39,9 +39,7 @@ Linuxディストリビューションがあるおかげで、我々は自身で
 
 ![desc of distribution](./images/distro.png)
 
-ディストリビューションについては[こちら-full](/public/articles/Distribution/page.md)
-ディストリビューションについては[こちら-art-](articles/Distribution/page.md)
-ディストリビューションについては[こちら-rel](../Distribution/page.md)
+ディストリビューションについては[こちら](Distribution)
 
 ## パッケージマネージャーとは
 
