@@ -121,7 +121,7 @@ Linuxで一般ユーザーにより作成されたテキストファイルなど
 - まったく権限を与えないなら → 0
 - つまりこの例では 640 と表記します
 
-![permission calculation](./images/cal.jpg)
+![permission calculation](/articles/User_perm/images/cal.jpg)
 
 ### なぜ 4,2,1 なのか?
 
@@ -200,7 +200,7 @@ chown alice: file
 
 ## 参考
 
-https://en.wikipedia.org/wiki/Cat#Superstitions_and_rituals
-https://wiki.archlinux.org/title/Users_and_groups
-https://linuc.org/study/knowledge/509/
+- https://en.wikipedia.org/wiki/Cat#Superstitions_and_rituals
+- https://wiki.archlinux.org/title/Users_and_groups
+- https://linuc.org/study/knowledge/509/
 
