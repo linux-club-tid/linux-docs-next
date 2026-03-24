@@ -1,7 +1,7 @@
 {
 inputs = {
   nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  common.url  = "path:../../nix-common";  # または Git URL
+  common.url  = "github:liar2357/nix-dev-common";  # または Git URL
 };
 
 outputs = { self, nixpkgs, common }:
