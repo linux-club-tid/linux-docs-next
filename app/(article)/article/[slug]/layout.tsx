@@ -1,5 +1,3 @@
-import "@/app/globals.css";
-
 import styles from "@/app/(main)/layout.module.css";
 
 import Header from "@/template/Header";
@@ -11,12 +9,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <body className={styles.root}>
-        <Header isArticle={true} />
-        <main className={styles.main}>{children}</main>
-        <Footer />
-      </body>
-    </html>
+    <body className={styles.root}>
+      <Header isArticle={true} />
+      <main className={styles.main}>{children}</main>
+      <Footer />
+    </body>
   );
 }

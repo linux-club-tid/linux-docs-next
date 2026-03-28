@@ -2,13 +2,13 @@
 
 そもそも、厳密にはLinuxという名称は`Linux Kernel`を指します。Kernelというのはプロセスやメモリ、ファイルシステムなどのリソース管理などを行うプログラムであり、それ単体で使うにはいささか不便です。そこでLinuxを普段使いするために便利なライブラリなどのソフトウェア、ディストリビューションをインストールするためのインストーラーなどの諸々のスタートキット的なツールを同梱して配布されているのが、Linux ディストリビューションと呼ばれるものです。
 
-![desc of distribution](../images/Essential/distro.png )
+![desc of distribution](/articles/Essential_Linux_Book/images/distro.png)
 
 画像の通り、様々なパッケージや管理システムをまるめて再配布しているのがディストリビューションなのですが、その同梱されるものについてもある程度解説します。
 
 ### DE/WMとは
 
-デスクトップ環境を管理するソフトウェア郡。詳しくは ->
+デスクトップ環境を管理するソフトウェア郡。詳しくは[こちら](DE_WM)
 
 ### glibcとは
 
@@ -18,7 +18,7 @@
 
 Linux上で動作するサービス(バックグランドで動作するようなソフトウェア)の管理を行うツール。具体的にはネットワークの管理ツールや、システムログ、.ディスク管理などのさまざまなサービスを扱います。またそれらの自動機能やログ管理などをsystemd、1つで行います。
 
-主に`systemctl`というコマンドにより操作します。より具体的な話は->
+主に`systemctl`というコマンドにより操作します。より具体的な話は-> [systemdとは](Systemd)
 
 余談ですが、`systemd`はログをバイナリで保存します。これにより効率的なインデックスなどを行えるのですが、それをテキストとして書き出そうとすると`journalctl`コマンドを使う必要があります。またsystemdという単一のソフトウェアに複数の機能をもたせすぎ、などの点でUnix的でないと批判されることもあります。ではほとんどsytemdを採用しています。(あくまで私見ですがLinuxは思想より実用性重視な哲学を持っていると思います)
 
@@ -28,18 +28,18 @@ Linux系のシステムで使用する基本的なコマンドのグループ。
 
 ### Shellとは
 
--> Shellとは
+-> [Shellとは](About_shell)
 
 ### Package Manager(Pkg Man)とは
 
-システムやユーザーのパッケージを管理するツール。`apt`とか`dnf`とか。詳しくは->
+システムやユーザーのパッケージを管理するツール。`apt`とか`dnf`とか。詳しくは-> [パッケージマネージャーとは](Package_manager)
 
 ### GRUBとは
 
-Linuxをブートするためのツール(boot loader)の一つ。Linuxが起動する前にLinuxをbootするためのソフトウェア。GRUBはメジャーで多くのディストリビューションで採用されている。選ぼうと思えば選べる。
+Linuxをブートするためのツール(boot loader)の一つ。Linuxが起動する前にLinuxをbootするためのソフトウェア。GRUBはメジャーで多くのディストリビューションで採用されている。選ぼうと思えば選べる。詳しくは以下のサイトがおすすめ。
 
-[boot loader](https://wiki.archlinux.jp/index.php/Arch_%E3%83%96%E3%83%BC%E3%83%88%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9#%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC)
-[GRUB](https://wiki.archlinux.jp/index.php/GRUB)
+- [boot loader](https://wiki.archlinux.jp/index.php/Arch_%E3%83%96%E3%83%BC%E3%83%88%E3%83%97%E3%83%AD%E3%82%BB%E3%82%B9#%E3%83%96%E3%83%BC%E3%83%88%E3%83%AD%E3%83%BC%E3%83%80%E3%83%BC)
+- [GRUB](https://wiki.archlinux.jp/index.php/GRUB)
 
 ## 具体的なディストリビューション
 
@@ -50,7 +50,7 @@ Linuxをブートするためのツール(boot loader)の一つ。Linuxが起動
 この再配布という構造がLinuxの流行った要因の1つであり、一般的なソフトウェアの配布はライセンスなどの問題で出来ない事が多いです。(Microsoftなどの[プロプライエタリ](https://ja.wikipedia.org/wiki/%E3%83%97%E3%83%AD%E3%83%97%E3%83%A9%E3%82%A4%E3%82%A8%E3%82%BF%E3%83%AA%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2)なソフトウェアにおいては多くの場合ライセンス違反になる)
 しかし、Linuxやその周辺ではOSS(特にGPL系)ライセンスとしてソフトウェアが公開されることが多く、細かい条件は各種ライセンスによりますが、再配布が容易であることがほとんどです。
 
-OSSについては[こちら]()
+OSSについては[こちら](OSS)
 
 話を戻して、具体的なディストリビューションとして多くがベースとなるディストリビューションを持つと記述しましたが、代表例として以下の3つを3大ディストリビューションと呼びます。大体のディストリビューションはこれらのディストリビューションをベースとされています。[List of Linux distributions(wikipedia)](https://en.wikipedia.org/wiki/List_of_Linux_distributions)の画像を見ればわかりますが多くの(特にDebian based)ディストリビューションが何らかのディストリビューションをベースに生まれていることがわかります。
 
@@ -66,6 +66,6 @@ OSSについては[こちら]()
 
 [Distrowatchの検索](https://distrowatch.com/search.php)で以下のように`Based on`にベースとなったディストリビューションを指定して検索できます。
 
-![example of based on in distrowatch](../images/distro/based-on-distrowatch.png)
+![example of based on in distrowatch](/articles/Distribution/images/based-on-distrowatch.png)
 
 [^1]: UbuntuがDebianベースで多くのディストリビューションはUbuntuをベースとしているため、実質的にはDebianベースとも言えます。ただ直接的な親はubuntuだよなぁというレンマを表現した結果のDebian/ubuntu表記です。
