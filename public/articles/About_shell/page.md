@@ -142,3 +142,4 @@ Shellは機能性やデザインのカスタマイズという点でも比較さ
 ## 関連
 
 - [Shell script](Shell_script)
+- [Shell変数について](Shell_var_env)

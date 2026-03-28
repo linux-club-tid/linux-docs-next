@@ -339,6 +339,10 @@ Hiro, Tokyo
 
 個人的な体験として、一番使うのはgrepにパイプで結果を検索することです。
 
+CLIやShellに関しては以下のページを。
+
+[Shellについて](About_shell)
+
 ## Linuxを最も簡単に身につける方
 
 ~~Windowsをラインセンスごと消し飛ばし、自身にLinuxの運用を強制する~~

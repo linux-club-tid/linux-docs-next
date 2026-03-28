@@ -9,4 +9,5 @@ export const articles = [
   { slug: "Shell_var_env", title: "Shell変数と環境変数について" },
   { slug: "DE_WM", title: "デスクトップ環境について" },
   { slug: "Commands", title: "コマンド。" },
+  { slug: "Systemd", title: "Systemdとは" },
 ];
