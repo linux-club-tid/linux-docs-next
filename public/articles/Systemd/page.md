@@ -17,25 +17,25 @@ Systemd とはサービスと呼ばれるバックグラウンドにて動作す
 
 ```bash
 # サービスの状態を確認する
-sudo systemd status keyd
+sudo systemctl status keyd
 
 # サービスを有効化
-sudo systemd enable keyd
+sudo systemctl enable keyd
 
 # サービスを無効化
-sudo systemd disable keyd
+sudo systemctl disable keyd
 
 # サービスを有効にして、その場で起動
-sudo systemd enable --now keyd
+sudo systemctl enable --now keyd
 
 # サービスを開始
-sudo systemd start keyd
+sudo systemctl start keyd
 
 # サービスを停止
-sudo systemd stop keyd
+sudo systemctl stop keyd
 
 # サービスを再起動
-sudo systemd restart keyd
+sudo systemctl restart keyd
 ```
 
 ## 余談 Systemdは悪なのか?
