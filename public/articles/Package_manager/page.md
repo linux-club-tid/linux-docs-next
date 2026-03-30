@@ -1,3 +1,8 @@
+コマンドや引数の表記について
+
+- `[]`で囲われた箇所はオプション(入力がなくてもいい)
+- `<>`で囲われた箇所は必須(入力が必要)
+
 ## そもそもパッケージとは
 
 Linuxに置いて、配布されているソフトウェア(プログラム)は多くの場合、依存関係を持っています。多くのソフトウェアで使用されるライブラリなどは手元に1つを置き、各ソフトウェアで共有すると言ったことが多いです。ライブラリ以外にもインタープリターやグラフ描画ツールなどプログラム自体に依存することも多いです。
@@ -59,21 +64,72 @@ sudo apt autoremove
 
 aptと同様にサブコマンド形式で行われます。またサブコマンド名もほとんどaptと同じ。
 
+```bash
+# パッケージを探す
+sudo dnf search pkg-name
+
+# パッケージをインストールする(パッケージ名は正確に)
+sudo dnf install pkg-name
+
+# パッケージリストをアップデート
+sudo dnf update
+# dnfはアップデート時に自動で更新されるため`upgrade`も同様の意味
+
+# 個別にアップデート
+sudo apt upgrade pkg-name
+
+# パッケージのアンインストール
+sudo dnf remove pkg-name
+```
+
 ### pacman Arch
+
+Arch Linuxで使われる`pacman`は他のパッケージマネージャーと違い、サブコマンドを用いずにオプションという形で`pacman -Syu`などと使用します。
+
+pacmanはアップデートやインストールなどといった操作ではなく、リポジトリとの同期をオプション付きで行うという操作になります。
+
+```bash
+# パッケージを探す
+sudo pacman -Ss pkg-name
+# 多くの場合は検索だけならsudoは不要
+
+# パッケージをインストールする(パッケージ名は正確に)
+sudo pacman -S pkg-name
+
+# 多くの場合は以下のアップデート相当の操作でpkg-nameを
+# 指定してインストールすることが多い
+
+# パッケージリストをアップデート
+sudo pacman -Syu [pkg-name]
+# pkg-nameはオプションなのでない場合はただのアップデート
+
+# パッケージのアンインストール
+sudo pacman -R pkg-name
+# purgeとすると設定ファイルなどまで完全に削除
+
+# 依存関係ごとパッケージを削除
+sudo pacman -Rns pkg-name
+```
+
+`-S`はリポジトリのパッケージをローカルに、`-Sy`はリポジトリのDBとローカルを同期、`-Syu`は古いパッケージに更新をかけるといった感じです。
 
 ## パッケージマネージャーサブコマンド 早見表
 
 | controls | apt | dnf | pacman |
 | :---: |:---: | :---: | :---: |
-| search | search | search | -Ss
-| install | install | install | -S |
-| uninstall | remove | | -R |
-| purge | purge | | -Rns |
-| update | update | update | |
-| upgrade | upgrade | upgrade | -Syu |
+| search | `search` | `search` | `-Ss` |
+| install | `install` | `install` | `-S` |
+| uninstall | `remove` | `remove`[^2] | `-R` |
+| purge | `purge` | `remove`[^2] | `-Rns` |
+| update | `update` | `update`[^3] | - |
+| upgrade | `upgrade` | `upgrade`[^3] | `-Syu` |
 
 ## 参考
 
 - [https://linuc.org/study/column/7078/](https://linuc.org/study/column/7078/)
 
 [^1]: 基本的にはパッケージの扱いはそのパッケージに従うはずなので、問題は起こりにくいと思いますが、マネージャー独自の機能などがあったりすると、競合する可能性もあるため、あまり複数のマネージャーの同時運用は推奨しません。
+
+[^2]: dnfにおいてはデフォルトで依存関係も消えるため`remove`で統一されている
+
+[^3]: dnfは自動更新のため`update`も`upgrade`も同様に意味になる

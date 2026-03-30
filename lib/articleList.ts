@@ -10,4 +10,5 @@ export const articles = [
   { slug: "DE_WM", title: "デスクトップ環境について" },
   { slug: "Commands", title: "コマンド。" },
   { slug: "Systemd", title: "Systemdとは" },
+  { slug: "Package_manager", title: "パッケージマネージャーとは" },
 ];
