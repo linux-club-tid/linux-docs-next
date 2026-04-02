@@ -36,4 +36,5 @@ export default function RootLayout({
   );
 }
 
-export const runtime = 'edge';
+// Runtime will be set by @opennextjs/cloudflare
+// export const runtime = 'edge';
