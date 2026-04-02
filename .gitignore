@@ -42,3 +42,10 @@ yarn-error.log*
 next-env.d.ts
 .direnv/
 
+# OpenNext
+.open-next
+
+# Build-time generated files
+/lib/articlesContent.json
+
+.wrangler/

@@ -1,6 +1,3 @@
-import { promises as fs } from "fs";
-import path from "path";
-
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
@@ -13,6 +10,7 @@ import { visit } from "unist-util-visit";
 import { notFound } from "next/navigation";
 
 import { articles } from "@/lib/articleList";
+import { getArticleContent } from "@/lib/articlesData";
 import styles from "./page.module.css";
 
 interface SubTitleValus {
@@ -23,25 +21,28 @@ type SubTitle =
   | { tag: "h2"; value: SubTitleValus }
   | { tag: "h3"; values: SubTitleValus[] };
 
+// Generate static params for all articles at build time
+export async function generateStaticParams() {
+  return articles.map((article) => ({
+    slug: article.slug,
+  }));
+}
+
+// Force static generation (no dynamic rendering)
+export const dynamic = 'force-static';
+export const dynamicParams = false; // Only allow pre-generated slugs
+
 export default async function Page({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const filePath = path.join(
-    process.cwd(),
-    "public",
-    "articles",
-    slug,
-    "page.md",
-  );
 
-  let content: string;
+  // Get content from bundled JSON
+  const content = getArticleContent(slug);
 
-  try {
-    content = await fs.readFile(filePath, "utf-8");
-  } catch {
+  if (!content) {
     return notFound();
   }
 
