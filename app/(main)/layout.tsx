@@ -1,4 +1,3 @@
-
 import styles from "./layout.module.css";
 
 import Header from "@/template/Header";
