@@ -1,13 +1,28 @@
 .footer {
   width: 75vw;
+
+  p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+}
+
+#cp_title {
+  font-size: 1.2rem;
+  margin-bottom: 0;
 }
 
 .footer_text {
   text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+  letter-spacing: 0.07em;
 }
 
 .footer_ul {
   align-content: center;
+  margin-top: 0;
 }
 
 .footer_content_wrap {
@@ -20,4 +35,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  p {
+    font-size: 0.98rem;
+    line-height: 1.35;
+    letter-spacing: 0.1em;
+
+  }
 }
