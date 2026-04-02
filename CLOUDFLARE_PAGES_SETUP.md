@@ -8,9 +8,9 @@ Cloudflare Dashboard → Pages → プロジェクト → Settings → Builds & 
 
 | 項目 | 値 |
 |------|-----|
-| **Framework preset** | `None` |
-| **Build command** | `npm run pages:build` |
-| **Build output directory** | `.open-next/assets` |
+| **Framework preset** | `Next.js (Static HTML Export)` |
+| **Build command** | `npm run build` |
+| **Build output directory** | `out` |
 | **Root directory** | (empty) |
 
 ### 環境変数
@@ -20,12 +20,6 @@ Production と Preview の両方に設定：
 | 変数名 | 値 |
 |--------|-----|
 | `NODE_VERSION` | `20` |
-
-## ローカルプレビュー
-
-```bash
-npm run pages:preview
-```
 
 ## デプロイ方法
 
@@ -37,9 +31,15 @@ git push origin main  # または develop
 
 プッシュすると自動的にビルド＆デプロイされます。
 
-## トラブルシューティング
+## ローカルでビルドテスト
 
-### 404エラーが出る場合
-- Framework preset が `None` になっているか確認
-- Build output directory が `.open-next/assets` になっているか確認
-- ビルドログで "OpenNext build complete" が表示されているか確認
+```bash
+npm run build
+npx serve out
+```
+
+## 仕組み
+
+1. `prebuild`スクリプトで全記事をJSONにバンドル
+2. `next build`で静的HTMLを生成（`out/`ディレクトリ）
+3. Cloudflare Pagesが`out/`をホスティング
