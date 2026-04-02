@@ -6,6 +6,7 @@
 
   --t-color: light-dark(#000000, #ffffff);
   --t-color-r: light-dark(#ffffff, #000000);
+  --t-color-sub: light-dark(#444444, #aaaaaa);
   --b-color: light-dark(#f0f0e0, #202020);
   --b-color-r: light-dark(#202020, #f0f0e0);
   --blue: light-dark(#4040ff, #c0c0ff);
@@ -20,19 +21,56 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-p {
-  font-size: 20px;
-}
-
 body {
   margin: 0;
   display: flex;
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: var(--font-main);
+}
+
+footer {
+  font-family: var(--font-footer);
+}
+
+pre,
+code {
+  font-family: var(--font-code);
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-family: var(--font-main-bold);
+  font-size: 2rem;
+}
+
+h2 {
+  font-family: var(--font-main-bold);
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-size: 1.3rem;
+}
+
+h6 {
+  font-size: 1.2rem;
+}
+
+p,
+a,
+ul,
+pre,
+code {
+  font-size: 1.1rem;
+  line-height: 1.6em;
+  letter-spacing: 0.05em;
 }

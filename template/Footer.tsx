@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer className={styles.footer}>
       <hr />
-      <h3 className={styles.footer_text}>Copyright © 2026 linux-club-tid</h3>
+      <h3 className={styles.footer_text} id={styles.cp_title}>Copyright &copy; 2026 linux-club-tid</h3>
       <br />
       <div className={styles.footer_content_wrap}>
         <div className={styles.footer_content}>
@@ -27,29 +27,30 @@ export default function Footer() {
           <ul className={styles.footer_ul}>
             <li>
               <a
-                href="https://github.com/Uliboooo"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                @Uliboooo
-              </a>
-            </li>
-            <li>
-              <a
                 href="https://github.com/liar2357"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                @liar2357
+                @liar2357 (dev)
               </a>
             </li>
+            <li>
+              <a
+                href="https://github.com/Uliboooo"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @Uliboooo (write)
+              </a>
+            </li>
+
           </ul>
         </div>
         <div className={styles.footer_content}>
           <h3 className={styles.footer_text}>about site</h3>
           <p className={styles.footer_text}>
-            このサイトは仕組みを0から100まで理解することより実践的にLinuxを使えるようになるための文書を目指しています。
-            随時記事は追加されていく予定です。
+            このサイトは仕組みを詳細に理解することより、実践的にLinuxを使えるようになるための文書を目指しています。
+            随時記事は追加していく予定です。
           </p>
         </div>
       </div>

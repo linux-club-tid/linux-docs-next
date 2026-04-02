@@ -35,9 +35,19 @@
   border-radius: 8px;
 }
 
+.img_cap {
+  font-size: 0.9rem;
+  color: var(--t-color-sub);
+}
+
 .a {
   cursor: pointer;
   color: var(--blue);
+  scroll-margin-top: 40vh;
+}
+
+.fn_li {
+  scroll-margin-top: 40vh;
 }
 
 .hr {
@@ -55,26 +65,22 @@
   margin-bottom: 0;
 }
 
-.sub_title_virt_line {
-  width: 0.5vw;
-  height: 5.5vh;
-  background-color: var(--blue);
-  position: absolute;
-  z-index: 999;
-}
-
 .sub_title_text {
-  padding-left: 30px;
+  margin-bottom: 1vh;
   margin-top: 5vh;
+  scroll-margin-top: 40vh;
 }
 
 .sub_title_hr {
   border-top: 2px solid var(--t-color);
+  margin-top: 0;
 }
 
 .lower_sub_title {
   margin-bottom: 0;
+  padding-left: 2vw;
   margin-top: 1vh;
+  scroll-margin-top: 40vh;
 }
 
 .lower_sub_title_hr {
