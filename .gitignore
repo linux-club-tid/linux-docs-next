@@ -33,6 +33,7 @@ yarn-error.log*
 # env files (can opt-in for committing if needed)
 .env*
 .direnv
+.dev.vars
 
 # vercel
 .vercel
@@ -44,6 +45,7 @@ next-env.d.ts
 
 # OpenNext
 .open-next
+.wrangler
 
 # Build-time generated files
 /lib/articlesContent.json

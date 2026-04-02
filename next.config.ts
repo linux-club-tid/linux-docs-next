@@ -1,12 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  // Cloudflare Pages with @opennextjs/cloudflare
+  // Static export for Cloudflare Pages
+  output: "export",
   images: {
     unoptimized: true,
   },
 };
 
 export default nextConfig;
-
-import('@opennextjs/cloudflare').then(m => m.initOpenNextCloudflareForDev());
