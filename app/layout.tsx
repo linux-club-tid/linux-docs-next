@@ -2,12 +2,12 @@ import "@/app/globals.css";
 import localFont from "next/font/local";
 
 const main = localFont({
-  src: "./fonts/ZenMaruGothic-Regular.ttf",
+  src: "./fonts/NotoSansJP-Regular.ttf",
   variable: "--font-main",
 });
 
 const main_bold = localFont({
-  src: "./fonts/ZenMaruGothic-Bold.ttf",
+  src: "./fonts/NotoSansJP-Bold.ttf",
   variable: "--font-main-bold",
 });
 
