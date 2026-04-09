@@ -11,10 +11,10 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "next": "16.1.7",
+    "next": "^16.2.3",
     "prismjs": "^1.30.0",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5",
     "react-markdown": "^10.1.0",
     "react-syntax-highlighter": "^16.1.1",
     "remark-gfm": "^4.0.1",
@@ -28,7 +28,7 @@
     "@types/react-dom": "^19",
     "@types/react-syntax-highlighter": "^15.5.13",
     "eslint": "^9",
-    "eslint-config-next": "16.1.7",
+    "eslint-config-next": "^16.2.3",
     "typescript": "^5",
     "wrangler": "^4.79.0"
   }
