@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/bundle-articles.js",
     "prebuild": "node scripts/bundle-articles.js",
     "build": "next build",
     "dev": "next dev",
@@ -32,4 +33,3 @@
     "wrangler": "^4.79.0"
   }
 }
-
