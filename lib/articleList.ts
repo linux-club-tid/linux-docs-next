@@ -11,4 +11,5 @@ export const articles = [
   { slug: "Commands", title: "コマンド。" },
   { slug: "Systemd", title: "Systemdとは" },
   { slug: "Package_manager", title: "パッケージマネージャーとは" },
+  { slug: "WSL2", title: "WSL2について" },
 ];
