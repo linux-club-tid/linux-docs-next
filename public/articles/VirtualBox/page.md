@@ -27,12 +27,27 @@ sudo pacman -Syu virtualbox
 
 VirtualBoxにおける仮想環境のセットアップには幾つかの手法があり、isoなどのイメージファイルからインストールを行う場合と、vdiなどのセットアップ済みのVirtulBoxの環境のアーカイブを用いて手元でまた再現するなどの手法があります。
 
+isoファイルとはLinuxの入ったディスクの1つのファイルにしたようなもので、多くのディストリビューションはこのフォーマットでインストーラーなどを同梱して配布しています。本来はisoファイルにインストールされているディスクイメージをUSBからbootできる形にして、PCにインストールしますが、今回は仮想環境を用意してそこにインストールをする形になります。
+
 ### isoファイルからのインストール
 
+まず左上の青いボタンから仮想マシンを作成します。
+
 ![1](/articles/VirtualBox/images/first.png)
+
+次にマシンの名前とISOファイルを場所を指定。
+
 ![2](/articles/VirtualBox/images/1ready_for_make.png)
-![3](/articles/VirtualBox/images/2ram_cpu_cusom.png)
+
+メモリーサイズやCPUのコア数などのマシンのスペック設定する。
+
+![3](/articles/VirtualBox/images/2ram_cpu_custom.png)
+
+スタートボタンでマシンの電源を入れます。
+
 ![4](/articles/VirtualBox/images/3list.png)
+
+この後は各ディストリビューションの起動指示に従ってインストールを行います。各ディストリビューションごとにインストール手順は異なるため、ここで詳らかには紹介しません。最近はGUIでのインストールが多いため割とやりやすいと思います。
 
 ### セットップ済みvdiのサークル配布について
 
