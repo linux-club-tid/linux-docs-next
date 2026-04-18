@@ -14,7 +14,7 @@ export default function Footer() {
             学内のLinuxコミュニティになることを目標に活動しています。
             <br />
             <a
-              href="https://linux-club-tid.github.io/Club/"
+              href="https://linux-club-tid.pages.dev/"
               target="_blank"
               rel="noopener noreferrer"
             >
