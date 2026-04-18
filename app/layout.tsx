@@ -31,7 +31,9 @@ export default function RootLayout({
       lang="ja"
       className={`${main.variable} ${main_bold.variable} ${footer.variable} ${code.variable}`}
     >
-      {children}
+      <body>
+        {children}
+      </body>
     </html>
   );
 }

@@ -9,7 +9,9 @@ export const articles = [
   { slug: "Shell_var_env", title: "Shell変数と環境変数について" },
   { slug: "DE_WM", title: "デスクトップ環境について" },
   { slug: "Commands", title: "コマンド。" },
-  { slug: "Systemd", title: "Systemdとは" },
-  { slug: "Package_manager", title: "パッケージマネージャーとは" },
+  { slug: "Systemd", title: "Systemdついて" },
+  { slug: "Package_manager", title: "パッケージマネージャーついて" },
+  { slug: "VirtualMachine", title: "仮想化について" },
   { slug: "WSL2", title: "WSL2について" },
+  { slug: "VirtualBox", title: "VirtualBoxについて" },
 ];
